@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@hapi/hapi": "^21.2.1",
+    "@prisma/client": "^4.9.0",
+    "dotenv": "^16.0.3",
+    "prisma": "^4.9.0"
+  },
+  "type": "module"
+}

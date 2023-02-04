@@ -1,0 +1,22 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+model guests {
+    id         Int      @id @default(autoincrement())
+    event_id   Int      @db.Integer()
+    name       String   @db.VarChar(50)
+    // 0. tidak hadir
+    // 1. hadir
+    status     Int      @db.SmallInt()
+    quotes     String   @db.Text()
+    device_id  String   @db.Text()
+    comment_at String   @db.VarChar(255)
+    created_at DateTime @db.Timestamp()
+    updated_at DateTime @db.Timestamp()
+}
