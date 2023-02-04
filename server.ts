@@ -1,13 +1,13 @@
 "use strict";
 
-import Hapi from "@hapi/hapi";
-import config from "./config/config.js";
-import routes from "./routes/index.js";
+import Hapi, { Server } from "@hapi/hapi";
+import config from "./config/config";
+import routes from "./routes/index";
 
 const init = async () => {
-  const server = Hapi.server({
+  const server: Server = Hapi.server({
     port: config.SERVER_PORT,
-    host: config.SERVER_HOST,
+    host: config.SERVER_HOST
   });
 
   //   init routes
@@ -16,7 +16,7 @@ const init = async () => {
   console.log("Server running on %s", server.info.uri);
 };
 
-process.on("unhandledRejection", err => {
+process.on("unhandledRejection", (err) => {
   console.log(err);
   process.exit(1);
 });

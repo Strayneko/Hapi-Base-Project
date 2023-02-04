@@ -1,12 +1,15 @@
+// generate prisma client
 generator client {
     provider = "prisma-client-js"
 }
 
+// define datasource
 datasource db {
     provider = "postgresql"
     url      = env("DATABASE_URL")
 }
 
+// guests table
 model guests {
     id         Int      @id @default(autoincrement())
     event_id   Int      @db.Integer()
