@@ -5,6 +5,9 @@
     "dotenv": "^16.0.3",
     "prisma": "^4.9.0"
   },
+  "scripts": {
+    "dev": "nodemon server.ts"
+  },
   "devDependencies": {
     "@types/node": "^18.11.19"
   }
